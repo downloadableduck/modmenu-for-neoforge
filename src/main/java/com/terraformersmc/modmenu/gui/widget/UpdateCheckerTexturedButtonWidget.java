@@ -1,0 +1,10 @@
+package com.terraformersmc.modmenu.gui.widget;
+
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+
+public class UpdateCheckerTexturedButtonWidget extends LegacyTexturedButtonWidget {
+   public UpdateCheckerTexturedButtonWidget(int x, int y, int width, int height, int u, int v, int hoveredVOffset, Identifier texture, int textureWidth, int textureHeight, OnPress pressAction, Component message) {
+      super(x, y, width, height, u, v, hoveredVOffset, texture, textureWidth, textureHeight, pressAction, message);
+   }
+}
