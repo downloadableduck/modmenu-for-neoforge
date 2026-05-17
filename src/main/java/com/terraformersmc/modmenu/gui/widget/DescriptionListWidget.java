@@ -113,7 +113,7 @@ public class DescriptionListWidget extends ObjectSelectionList<DescriptionListWi
       return this.getY() + 4 - (int)this.scrollAmount() + index * this.itemHeight;
    }
 
-   protected void renderListItems(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
+   public void renderListItems(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
       int entryLeft = this.getRowLeft();
       int entryCount = this.getItemCount();
       int listY = this.getY();

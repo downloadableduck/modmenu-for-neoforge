@@ -16,7 +16,7 @@ public final class EnumToLowerCaseJsonConverter implements JsonSerializer<Enum<?
    private static final Map<String, Class<? extends Enum<?>>> TYPE_CACHE = new HashMap();
 
    public JsonElement serialize(Enum<?> src, Type typeOfSrc, JsonSerializationContext context) {
-      return (JsonElement)(src == null ? JsonNull.INSTANCE : new JsonPrimitive(src.name().toLowerCase()));
+      return src == null ? JsonNull.INSTANCE : new JsonPrimitive(src.name().toLowerCase());
    }
 
    public Enum<?> deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {

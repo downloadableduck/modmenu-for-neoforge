@@ -512,7 +512,7 @@ public class ModListWidget extends ObjectSelectionList<ModListEntry> implements 
 
    }
 
-   protected void renderListItems(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
+   public void renderListItems(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
       int entryLeft = this.getRowLeft();
       int entryWidth = this.getRowWidth();
       int entryHeight = this.itemHeight - 4;

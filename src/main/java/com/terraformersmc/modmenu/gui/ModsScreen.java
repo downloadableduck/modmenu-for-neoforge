@@ -110,7 +110,6 @@ public class ModsScreen extends Screen {
          return this.descriptionListWidget.isMouseOver(mouseX, mouseY) ? this.descriptionListWidget.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount) : false;
       }
    }
-
    protected void init() {
       boolean hideTop = (Boolean)ModMenu.getConfig().HIDE_SCREEN_TOP.get();
       int paneY;
@@ -265,14 +264,17 @@ public class ModsScreen extends Screen {
 
    public void extractRenderState(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
       super.extractRenderState(guiGraphics, mouseX, mouseY, delta);
-      boolean hideTop = (Boolean)ModMenu.getConfig().HIDE_SCREEN_TOP.get();
+      boolean hideTop = ModMenu.getConfig().HIDE_SCREEN_TOP.get();
       int rightPaneY = hideTop ? 5 : 48;
       ModListEntry selectedEntry = this.selected;
       if (selectedEntry != null) {
          this.descriptionListWidget.extractRenderState(guiGraphics, mouseX, mouseY, delta);
+         this.descriptionListWidget.renderListItems(guiGraphics, mouseX, mouseY, delta);
       }
 
       this.modList.extractRenderState(guiGraphics, mouseX, mouseY, delta);
+      /*this is the reason why the scrolling wasn't working. make sure this is called.*/
+      this.modList.renderListItems(guiGraphics, mouseX, mouseY, delta);
       this.searchBox.extractRenderState(guiGraphics, mouseX, mouseY, delta);
       int rightPaneCenterX;
       int x;
